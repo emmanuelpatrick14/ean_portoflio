@@ -8,20 +8,48 @@ import "./Skills.scss";
 const Skills = () => {
   const [skills, setSkills] = useState([]);
   const [experiences, setExperiences] = useState([]);
-
   useEffect(() => {
-    const query = '*[_type == "experiences"]';
-    const skillsQuery = '*[_type == "skills"]';
+    const fetchExperiences = async () => {
+      const query = '*[_type == "experiences"]';
+      const experiencesData = await client.fetch(query);
+      setExperiences(experiencesData);
+    };
 
-    client.fetch(query).then((data) => {
-      setExperiences(data);
-    });
+    const fetchSkills = async () => {
+      const skillsQuery = '*[_type == "skills"]';
+      const skillsData = await client.fetch(skillsQuery);
 
-    client.fetch(skillsQuery).then((data) => {
-      setSkills(data);
-    });
+      // Custom sorting function
+      const customSortOrder = ["JavaScript", "CSS", "React","Node JS", "TypeScript", "Next.JS"];
+
+      const sortedSkills = skillsData.sort((a, b) => {
+        console.log(8)
+        const aIndex = customSortOrder.indexOf(a.name);
+        const bIndex = customSortOrder.indexOf(b.name);
+        
+        // If both skills are in customSortOrder, sort by their indices
+        if (aIndex !== -1 && bIndex !== -1) {
+          return aIndex - bIndex;
+        }
+        // If only one skill is in customSortOrder, it comes first
+        else if (aIndex !== -1) {
+          return -1;
+        } else if (bIndex !== -1) {
+          return 1;
+        }
+        // If neither skill is in customSortOrder, sort alphabetically
+        else {
+          return a.name.localeCompare(b.name);
+        }
+      });
+
+      setSkills(sortedSkills);
+    };
+
+    // Fetch experiences and skills data
+    fetchExperiences();
+    fetchSkills();
   }, []);
-
   return (
     <>
       <h2 className="head-text">Skills & Experience</h2>
