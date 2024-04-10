@@ -6,15 +6,14 @@
 
 .app__skills-container {
   width: 80%;
+  margin: 0 auto;
   margin-top: 3rem;
 
-  
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  // gap: 2rem;
-  
+  align-items: flex-start;
+
   @media screen and (max-width: 900px) {
     width: 100%;
     flex-direction: column;
@@ -35,7 +34,8 @@
     margin-right: 0;
     justify-content: center;
     align-items: center;
-    border: none;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-color);
   }
 }
 
@@ -120,7 +120,7 @@
     cursor: pointer;
 
     h4 {
-      font-weight: 500;
+      font-weight: 700;
     }
 
     p {
@@ -134,6 +134,8 @@
 .app__skills-exp-year {
   margin-right: 3rem;
 
+  z-index: 1;
+
   p {
     font-weight: 800;
     color: var(--secondary-color);
@@ -144,20 +146,22 @@
   }
 }
 
-.skills-tooltip {
-  max-width: 300px !important;
-  background-color: var(--white-color) !important;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1) !important;
-  border-radius: 5px !important;
-  padding: 1rem !important;
-  color: var(--gray-color) !important;
-  text-align: center !important;
-  line-height: 1.5 !important;
-  opacity: 1 !important;
+.skills-description {
+  max-width: 100%;
+  background-color: var(--white-color);
+  // padding: 1rem;
+  color: var(--gray-color);
+
+  text-align: left;
+  line-height: 1.5;
+  opacity: 1;
+
+  font-weight: 600; /* Updated font-weight */
+  border-radius: 5px; /* Added border-radius for rounded corners */
 
   @media screen and (min-width: 2000px) {
-    font-size: 1.75rem !important;
-    max-width: 500px !important;
-    line-height: 2 !important;
+    font-size: 1.75rem;
+    max-width: 100%;
+    line-height: 2;
   }
 }

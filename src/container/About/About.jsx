@@ -22,7 +22,7 @@ const About = () => {
   return (
     <>
       <h2 className="head-text">
-        I Know That <span>Good Development</span> <br /> means{" "}
+        I Know That <span>Good Development</span> <br /> means
         <span> Good Business</span>
       </h2>
 

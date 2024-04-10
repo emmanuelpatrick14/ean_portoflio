@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
-import { Tooltip } from "react-tooltip";
 import "./Skills.scss";
 
 const Skills = () => {
@@ -23,7 +22,6 @@ const Skills = () => {
       const customSortOrder = ["JavaScript", "CSS", "React","Node JS", "TypeScript", "Next.JS"];
 
       const sortedSkills = skillsData.sort((a, b) => {
-        console.log(8)
         const aIndex = customSortOrder.indexOf(a.name);
         const bIndex = customSortOrder.indexOf(b.name);
         
@@ -51,7 +49,7 @@ const Skills = () => {
     fetchSkills();
   }, []);
   return (
-    <>
+    < >
       <h2 className="head-text">Skills & Experience</h2>
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
@@ -76,12 +74,13 @@ const Skills = () => {
           {experiences.map((experience) => (
             <motion.div className="app__skills-exp-item" key={experience.year}>
               <div className="app__skills-exp-year">
-                <p className="bold-text">{experience.year}</p>
+                <p className="bold-text app__skills-year">{experience.year}
+                
+                </p>
               </div>
               <motion.div className="app__skills-exp-works">
                 {experience.works.map((work) => (
                   <div key={work.name}>
-                    {console.log(work.desc)}
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -90,19 +89,16 @@ const Skills = () => {
                       data-tip
                       data-for={work.name}
                       key={work.name}
-                      s
+                      
                     >
-                      <h4 className="bold-text">{work.name}</h4>
+                      <h3 className="bold-text">{work.name}</h3>
                       <p className="p-text">{work.company}</p>
                     </motion.div>
-                    <Tooltip
-                      id={work.name}
-                      effect="solid"
-                      arrowColor="#fff"
-                      className="skills-tooltip"
+                    <h4
+                      className="skills-description"
                     >
                       {work.desc}
-                    </Tooltip>
+                    </h4>
                   </div>
                 ))}
               </motion.div>
