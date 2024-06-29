@@ -13,7 +13,10 @@ const Work = () => {
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
   useEffect(() => {
-    const query = '*[_type == "works"]';
+    let query = '*[_type == "works"]';
+
+    // Modify the query to order works alphabetically by title
+    query += "| order(title asc)";
 
     client.fetch(query).then((data) => {
       setWorks(data);
@@ -43,19 +46,17 @@ const Work = () => {
       </h2>
 
       <div className="app__work-filter">
-        {["UI/UX", "Web App", "Mobile App", "React JS", "All"].map(
-          (item, index) => (
-            <div
-              key={index}
-              onClick={() => handleWorkFilter(item)}
-              className={`app__work-filter-item app__flex p-text ${
-                activeFilter === item ? "item-active" : ""
-              }`}
-            >
-              {item}
-            </div>
-          )
-        )}
+        {["Next.js", "React", "Nodejs", "All"].map((item, index) => (
+          <div
+            key={index}
+            onClick={() => handleWorkFilter(item)}
+            className={`app__work-filter-item app__flex p-text ${
+              activeFilter === item ? "item-active" : ""
+            }`}
+          >
+            {item}
+          </div>
+        ))}
       </div>
 
       <motion.div

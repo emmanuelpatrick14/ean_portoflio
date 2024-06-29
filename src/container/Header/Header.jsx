@@ -5,7 +5,7 @@ import "./Header.scss";
 import { AppWrap } from "../../wrapper";
 
 const Header = () => {
-  const texts = ["Emmanuel Patrick", "A Full Stack Enguneer","A Web Developer", ];
+  const texts = ["Emmanuel Patrick", "A Full Stack Engineer","A Web Developer", ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentText, setCurrentText] = useState(texts[0]);
 
@@ -33,7 +33,7 @@ const Header = () => {
               Welcome to my portfolio website
             </p>
             <div style={{}}>
-              <h1 className="head-text">👋 Hi, I'm <span style={{color:"green"}}>{currentText}</span></h1>
+              <h1 className="head-text">👋 Hi, I'm <span style={{color:"#314bac"}}>{currentText}</span></h1>
             </div>
           </div>
 

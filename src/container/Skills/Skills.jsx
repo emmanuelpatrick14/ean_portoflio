@@ -97,7 +97,7 @@ const Skills = () => {
                     <h4
                       className="skills-description"
                     >
-                      {work.desc}
+                      {/* {work.description} */}
                     </h4>
                   </div>
                 ))}
