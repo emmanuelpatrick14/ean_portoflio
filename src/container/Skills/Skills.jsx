@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Skills.scss";
+import PortableTextComponent from "../../wrapper/PortableTextComponent";
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
@@ -95,10 +96,12 @@ const Skills = () => {
                       <p className="p-text">{work.company}</p>
                     </motion.div>
                     <h4
-                      className="skills-description"
-                    >
-                      {/* {work.description} */}
-                    </h4>
+                       className="skills-description" 
+                     > 
+                      {/* {work.description } */}
+
+                    {  <PortableTextComponent value={work.desc} truncateAfter={10}  />}
+                     </h4> 
                   </div>
                 ))}
               </motion.div>
