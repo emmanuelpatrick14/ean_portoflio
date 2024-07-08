@@ -64,7 +64,17 @@
     justify-content: flex-start;
     align-items:flex-start;
 
-  
+    p {
+      color: #5b5b5b;
+      font-family: "sans-serif";
+      font-weight: 800;
+      margin-bottom: 20px;
+      font-size: 1.2rem; // Default font size
+
+      @media screen and (min-width: 1000px) {
+        font-size: 2rem; // Increased font size for larger screens
+      }
+    }
 
     div{
       h1{
@@ -101,6 +111,12 @@
         font-size: large;
         width: 100%;
        }
+
+       @media screen and (min-width: 1000px) {
+        font-size: 1.6rem;
+        // font-weight: 600;
+        // width: 70%;
+       }
     }
   }
 
@@ -133,6 +149,10 @@
     z-index: 1;
 
     object-fit: contain;
+    
+@media (min-width: 1200px) and (max-width: 1350px) {
+  margin-top: 220px;
+}
    
   }
   .overlay_circle {
@@ -147,10 +167,17 @@
 
     @media screen and (max-width: 750px) {
 top:40px;    }
+
+   
+@media (min-width: 1200px) and (max-width: 1380px) {
+  top: 50px;
+}
   }
   @media screen and (max-width: 750px) {
 margin: 0 auto;  }
   @media screen and (max-width: 1200px) {
     margin: 2rem 0;
   }
+
+ 
 }

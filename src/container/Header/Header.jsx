@@ -29,7 +29,7 @@ const Header = () => {
       >
         <div className="app__header-intro">
           <div className="intro-cmp app__flex">
-            <p className="p-text" style={{color:'#5b5b5b',fontFamily:"sans-serif", fontWeight:"800", marginBottom:'20px',fontSize:"1.2rem"}}>
+            <p className="p-text">
               Welcome to my portfolio website
             </p>
             <div style={{}}>
