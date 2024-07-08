@@ -4,7 +4,6 @@ import {
   Skills,
   Footer,
   Header,
-  Testimonial,
   About,
 } from "./container/index.js";
 import { Navbar } from "./components/index.js";
@@ -18,7 +17,6 @@ const App = () => {
       <About />
       <Work />
       <Skills />
-      {/* <Testimonial/> */}
       <Footer />
     </div>
   );
