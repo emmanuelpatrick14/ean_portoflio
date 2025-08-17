@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { client } from "../../client";
+import { client } from "../../client"; // Assuming this is your Sanity client
 import "./Footer.scss";
 
 const Footer = () => {
@@ -50,21 +50,16 @@ const Footer = () => {
       <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
-          <a href="mailto:emmanuel.patrick2121@gmail.com" className="p-text">
-            emmanuel.patrick2121@gmail.com
+          <a href="mailto:emman1@gmail.com" className="p-text">
+            mike@gmail.com
           </a>
         </div>
-        <div className="app__footer-card">
-          <img src={images.mobile} alt="phone" />
-          <a href="tel:+234 810 947 3851" className="p-text">
-            +234 810 947 3851 (Whatsapp)
-          </a>
-        </div>
+        
       </div>
 
       {formError ? (
         <div className="error-message p-text">
-           <p>Sorry, there was an issue submitting your message. Please click on the email above to contact me directly. Thank you for your understanding.</p>
+          <p>Sorry, there was an issue submitting your message. Please click on the email above to contact me directly. Thank you for your understanding.</p>
         </div>
       ) : (
         !isFormSubmitted ? (
@@ -73,7 +68,7 @@ const Footer = () => {
               <input
                 className="p-text"
                 type="text"
-                placeholder="Your Name"
+                placeholder="Name" 
                 name="name"
                 value={name}
                 onChange={handleChangeInput}
@@ -83,7 +78,7 @@ const Footer = () => {
               <input
                 className="p-text"
                 type="email"
-                placeholder="Your Email"
+                placeholder="Email" 
                 name="email"
                 value={email}
                 onChange={handleChangeInput}
@@ -92,7 +87,7 @@ const Footer = () => {
             <div>
               <textarea
                 className="p-text"
-                placeholder="Your Message"
+                placeholder="Message" 
                 value={message}
                 name="message"
                 onChange={handleChangeInput}
