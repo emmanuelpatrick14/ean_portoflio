@@ -1,67 +1,43 @@
-// export default{
-//     name:'skills',
-//     title:'Skills',
-//     type: 'document',
-//     fields:[
-//         {
-//             name:'name',
-//             title:'Name',
-//             type:'string'
-//         },
-//         {
-//             name:'bgColor',
-//             title:'BgColor',
-//             type:'string'
-//         },
-//         {
-//             name:'icon',
-//             title:'Icon',
-//             type: 'image',
-//             options: {
-//               hotspot: true,
-//             },
-//         },
-        
-//     ]
-// }
+import { defineType, defineField } from 'sanity'
 
-
-
-export default {
-  name: 'skills',
-  title: 'Skills',
+export default defineType({
+  name: 'works',
+  title: 'Works',
   type: 'document',
   fields: [
-    {
-      name: 'name',
-      title: 'Name',
+    defineField({
+      name: 'title',
+      title: 'Title',
       type: 'string',
-    },
-    {
-      name: 'bgColor',
-      title: 'BgColor',
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
       type: 'string',
-    },
-    {
-      name: 'icon',
-      title: 'Icon',
+    }),
+    defineField({
+      name: 'projectLink',
+      title: 'Project Link',
+      type: 'url',
+    }),
+    defineField({
+      name: 'codeLink',
+      title: 'Code Link',
+      type: 'url',
+    }),
+    defineField({
+      name: 'imgUrl',
+      title: 'Image',
       type: 'image',
       options: {
         hotspot: true,
       },
-    },
-    {
-      name: 'category',
-      title: 'Category',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Writing', value: 'writing' },
-          { title: 'Machine Learning', value: 'machine-learning' },
-        ],
-        layout: 'radio' // optional: you can use 'dropdown' instead
-      },
-      validation: Rule => Rule.required()
-    },
+    }),
+    defineField({
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
   ],
-};
+})
