@@ -1,74 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { images } from "../../constants";
 import "./Header.scss";
-import { AppWrap } from "../../wrapper";
+import { AppWrap,MotionWrap } from "../../wrapper";
 
 const Header = () => {
-  const texts = ["Emmanuel Patrick", "A Full Stack Engineer","A Web Developer", ];
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [currentText, setCurrentText] = useState(texts[0]);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 4000); 
-    return () => clearInterval(intervalId); // Cleanup on component unmount
-  }, []);
-
-  useEffect(() => {
-    setCurrentText(texts[currentTextIndex]);
-  }, [currentTextIndex]);
-
   return (
-    <div className="app__header app__flex">
+    <section className="about-section app__flex" id="about">
       <motion.div
-        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
-        className="app__header-info"
+        className="about-image"
+        whileInView={{ opacity: [0, 1], scale: [0.9, 1] }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
       >
-        <div className="app__header-intro">
-          <div className="intro-cmp app__flex">
-            <p className="p-text">
-              Welcome to my portfolio website
-            </p>
-            <div style={{}}>
-              <h1 className="head-text">👋 Hi, I'm <span style={{color:"#314bac"}}>{currentText}</span></h1>
-            </div>
-          </div>
-
-          <div className="tag-cmp app__flex">
-            <p className="app__head-desc">
-              Dynamic Full Stack Developer with a year of experience in the tech
-              industry, showcasing impressive skills in crafting modern web
-              applications and ensuring seamless user interactions. Proficient
-              in frontend technologies such as React and Next.js, coupled with
-              backend expertise in Express.js and NestJs. Strong grasp of web
-              accessibility standards. History of delivering projects on time
-              and within budget through effective collaboration. Seeking to
-              apply technical expertise and track record to contribute to a
-              dynamic team.
-            </p>
-          </div>
+        <div className="image-frame">
+          <img src={images.mike} alt="Content Writer" />
         </div>
       </motion.div>
 
       <motion.div
-        whileInView={{ opacity: [0, 1] }}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className="app__header-img"
+        className="about-text"
+        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.6 }}
       >
-        <img src={images.profile} alt="profile_bg" />
-        <motion.img
-          whileInView={{ scale: [0, 1] }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-          src={images.circle}
-          alt="profile_circle"
-          className="overlay_circle"
-        />
+        <h1 className="about-heading">
+          Bridging <span className="highlight">Words</span> and{" "}
+          <span className="highlight">Data</span> — Meet{" "}
+          <span className="highlight">CHIKAMSO</span>
+        </h1>
+        <p className="about-subheading">
+          Content Writer · Machine Learning Explorer · Strategy-Driven Storyteller
+        </p>
+        <p className="about-description">
+          Versatile content writer and marketing strategist with a strong background in
+          entertainment journalism, creative storytelling, and digital content development.
+          Experienced in writing for high-profile platforms under Valnet, covering pop culture,
+          film, television, and celebrity finance. Adept at SEO optimization, UX content
+          development, and narrative-driven projects. Currently expanding into machine learning —
+          blending analytical depth with creative clarity to deliver results that engage and convert.
+        </p>
       </motion.div>
-    </div>
+    </section>
   );
 };
 
-export default AppWrap(Header, "home");
+export default AppWrap(
+  MotionWrap(Header, "app__footer"),
+  "home",
+  "app__whitebg"
+);

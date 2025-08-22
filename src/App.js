@@ -1,10 +1,10 @@
 import React from "react";
 import {
-  Work,
+  Experience,
   Skills,
   Footer,
   Header,
-  About,
+  Projects,
 } from "./container/index.js";
 import { Navbar } from "./components/index.js";
 import "./App.scss"
@@ -14,8 +14,8 @@ const App = () => {
     <div className="app">
       <Navbar />
       <Header />
-      <About />
-      <Work />
+      <Projects /> 
+      <Experience />
       <Skills />
       <Footer />
     </div>

@@ -1,3 +1,16 @@
+// Add these to your :root or define them directly where used if you don't have a global :root
+// For example, if your global variables are in a separate file, add them there.
+// Otherwise, you can define them at the top of this SCSS file.
+// For demonstration, I'll assume they can be added to :root if you have one.
+// If you don't have a :root in this file, consider adding it or replacing var() with direct hex codes.
+
+// :root {
+//   --light-purple-1: #e6e6fa; // Lavender
+//   --light-purple-2: #e0e0ff; // Light Periwinkle
+//   // ... other color variables you might have
+// }
+
+
 .app__footer {
   flex: 1;
   width: 100%;
@@ -20,13 +33,13 @@
     min-width: 350px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center; /* MODIFIED: Center content for email card */
     align-items: center;
     margin: 1rem 0;
     padding: 1rem;
     border-radius: 10px;
     cursor: pointer;
-    background-color: #fef4f5;
+    background-color: #e6e6fa; /* MODIFIED: Pink to light purple 1 (Lavender) */
     transition: all 0.3s ease-in-out;
 
     img {
@@ -38,6 +51,8 @@
     a {
       text-decoration: none;
       font-weight: 500;
+      text-align: center; /* MODIFIED: Centralize text within the link */
+
 
       @media screen and (min-width: 1000px) {
         font-size: 1rem;
@@ -45,7 +60,7 @@
     }
 
     &:hover {
-      box-shadow: 0 0 25px #fef4f5;
+      box-shadow: 0 0 25px #e6e6fa; /* MODIFIED: Hover shadow to match new color */
     }
   }
 
@@ -68,13 +83,14 @@
   }
 }
 
-.app__footer-cards .app__footer-card:last-child {
-  background-color: #f2f7fb;
-}
+/* REMOVED: Specific styling for the last-child (mobile card) as it's being removed */
+// .app__footer-cards .app__footer-card:last-child {
+//   background-color: #f2f7fb;
+// }
+// .app__footer-cards .app__footer-card:last-child:hover {
+//   box-shadow: 0 0 25px #f2f7fb;
+// }
 
-.app__footer-cards .app__footer-card:last-child:hover {
-  box-shadow: 0 0 25px #f2f7fb;
-}
 
 .app__footer-form {
   width: 60%;
@@ -86,7 +102,7 @@
     margin: 0.75rem 0;
     border-radius: 10px;
     cursor: pointer;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); // Assuming var(--primary-color) is white or light
     transition: all 0.3s ease-in-out;
 
     input,
@@ -156,7 +172,7 @@
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 10px;
-  background-color: #fef4f5;
+  background-color: #e0e0ff; /* MODIFIED: Error message background to light purple 2 */
   color: var(--secondary-color);
   font-family: var(--font-base);
   text-align: center;

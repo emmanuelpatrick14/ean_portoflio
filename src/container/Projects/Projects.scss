@@ -1,0 +1,133 @@
+
+
+/* Updated SCSS */
+.category-tabs {
+  text-align: center;
+  margin: 2rem 0;
+
+  button {
+    margin: 0 1rem;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+
+    &.active {
+      background: #313bac;
+      color: white;
+    }
+  }
+}
+
+.app__profiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.app__profile-item {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: box-shadow 0.3s, transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #eee;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .bold-text {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .app__project-description {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 0.8rem;
+  }
+
+  .app__project-date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1rem;
+  }
+
+  .card-buttons {
+    display: flex;
+    gap: 1rem;
+
+    .cta-btn {
+      background-color: #313bac;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #4b4fc0;
+      }
+    }
+  }
+}
+
+.enhanced-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  will-change: transform;
+  cursor: pointer;
+}
+
+
+
+.read-more-link {
+  color: #313bac;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 5px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}  
+
+
+.read-more-btn {
+  background: transparent;
+  color: #313bac;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.3s ease, background 0.3s ease;
+  border-radius: 6px;
+  margin-top: 0.3rem;
+
+  &:hover {
+    background-color: rgba(49, 59, 172, 0.05);
+    color: #4b4fc0;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(49, 59, 172, 0.3);
+  }
+}
