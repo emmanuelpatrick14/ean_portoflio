@@ -1,120 +1,195 @@
-:root {
-  --pink-dark: #C71585;
-  --pink-darker-hover: #a30b67;
-  --pink-light: #FFB6C1;
-  --gold-glossy: #FFD700;
-  --white-color: #FFFFFF;
-  --gray-color: #808080;
-  --font-base: 'Nunito', sans-serif;
+// Add these to your :root or define them directly where used if you don't have a global :root
+// For example, if your global variables are in a separate file, add them there.
+// Otherwise, you can define them at the top of this SCSS file.
+// For demonstration, I'll assume they can be added to :root if you have one.
+// If you don't have a :root in this file, consider adding it or replacing var() with direct hex codes.
+
+// :root {
+//   --light-purple-1: #e6e6fa; // Lavender
+//   --light-purple-2: #e0e0ff; // Light Periwinkle
+//   // ... other color variables you might have
+// }
+
+
+.app__footer {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
-.footer {
-  width: 100%;
-  background-color: var(--pink-dark);  /* Matches navbar background */
-  color: var(--white-color);
-  padding: 2rem 1rem;  /* Similar padding to navbar */
-  font-family: var(--font-base);
-  box-shadow: 0 -4px 12px rgba(199, 21, 133, 0.3);  /* Inverted shadow for footer, like navbar's box-shadow */
-  text-align: center;  /* Conventional for footers */
+.app__footer-cards {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  margin: 4rem auto 2rem;
 
-  .footer-content {
-    max-width: 1200px;  /* Matches potential container widths */
-    margin: 0 auto;  /* Center content */
+  .app__footer-card {
+    min-width: 350px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center; /* MODIFIED: Center content for email card */
     align-items: center;
-    gap: 1rem;
-  }
-
-  .footer-text {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;  /* Bold like navbar links */
-  }
-
-  .footer-nav {
-    display: flex;
-    gap: 1.5rem;  /* Similar gap to navbar links */
     margin: 1rem 0;
-
-    a {
-      color: var(--white-color);
-      text-decoration: none;
-      font-weight: 600;  /* Matches navbar font-weight */
-      font-size: clamp(0.875rem, 1vw, 1rem);  /* Same as navbar links */
-      padding: 0.5rem 0.75rem;  /* Padding for clickability */
-      border-radius: 6px;  /* Rounded like navbar */
-      transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transitions like navbar */
-
-      &:hover,
-      &:focus {
-        background-color: var(--pink-darker-hover);  /* Matches navbar hover */
-        transform: scale(1.05);  /* Subtle scale effect like navbar buttons */
-      }
-    }
-  }
-
-  .social-links {
-    display: flex;
-    gap: 1rem;  /* Keep it spaced like navbar */
-    margin: 1rem 0;
-
-    a {
-      color: var(--white-color);
-      font-size: 1rem;
-      text-decoration: none;
-      transition: color 0.3s ease;  /* Simple transition */
-
-      &:hover {
-        color: var(--pink-light);  /* Subtle color change like navbar */
-      }
-    }
-  }
-
-  .contact-info {
-    font-size: 0.9rem;
-    margin: 1rem 0;
-    font-weight: 500;  /* Readable and consistent */
-  }
-
-  .back-to-top {
-    padding: 0.6rem 1.5rem;  /* Matches navbar donate button */
-    background: linear-gradient(135deg, var(--gold-glossy), #f6e27a);  /* Glossy gradient like donate button */
-    color: var(--pink-dark);
-    font-weight: 700;
-    font-size: clamp(0.875rem, 1vw, 1rem);
-    border: none;
-    border-radius: 12px;  /* Same as navbar button */
+    padding: 1rem;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;  /* Full transition like navbar */
+    background-color: #e6e6fa; /* MODIFIED: Pink to light purple 1 (Lavender) */
+    transition: all 0.3s ease-in-out;
+
+    img {
+      width: 40px;
+      height: 40px;
+      margin: 0 0.7rem;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: 500;
+      text-align: center; /* MODIFIED: Centralize text within the link */
+
+
+      @media screen and (min-width: 1000px) {
+        font-size: 1rem;
+      }
+    }
 
     &:hover {
-      background: linear-gradient(135deg, #f6e27a, var(--gold-glossy));  /* Gradient flip like navbar */
-      color: var(--white-color);
-      transform: scale(1.05);  /* Scale on hover */
+      box-shadow: 0 0 25px #e6e6fa; /* MODIFIED: Hover shadow to match new color */
     }
   }
 
-  /* Responsive adjustments - Similar to your navbar media queries */
-  @media screen and (max-width: 1024px) {
-    padding: 1.5rem 1rem;  /* Reduce padding on medium screens */
-    .footer-nav {
-      flex-wrap: wrap;  /* Wrap links if space is tight */
-      gap: 1rem;
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1000px) {
+    flex-direction: row;
+    gap: 3.5rem;
+    justify-content: center;
+  }
+
+  .p-text {
+    font-size: 0.8rem;
+
+    @media screen and (min-width: 1000px) {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* REMOVED: Specific styling for the last-child (mobile card) as it's being removed */
+// .app__footer-cards .app__footer-card:last-child {
+//   background-color: #f2f7fb;
+// }
+// .app__footer-cards .app__footer-card:last-child:hover {
+//   box-shadow: 0 0 25px #f2f7fb;
+// }
+
+
+.app__footer-form {
+  width: 60%;
+  flex-direction: column;
+  margin: 1rem auto;
+
+  div {
+    width: 100%;
+    margin: 0.75rem 0;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--primary-color); // Assuming var(--primary-color) is white or light
+    transition: all 0.3s ease-in-out;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.95rem;
+      border: none;
+      border-radius: 7px;
+      background-color: var(--primary-color);
+      font-family: var(--font-base);
+      color: var(--secondary-color);
+      outline: none;
+
+      @media screen and (min-width: 650px) {
+        font-size: larger;
+      }
+    }
+
+    textarea {
+      height: 170px;
+    }
+
+    &:hover {
+      box-shadow: 0 0 25px var(--primary-color);
+    }
+
+    @media screen and (min-width: 650px) {
+      min-width: 600px;
+      padding: 0.5rem 0;
     }
   }
 
-  @media screen and (max-width: 900px) {
-    .footer-content {
-      gap: 0.5rem;  /* Tighter spacing on mobile */
+  button {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--secondary-color);
+    font-weight: 500;
+    color: var(--white-color);
+    outline: none;
+    margin: 2rem 0 0 0;
+    font-family: var(--font-base);
+    transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    cursor: pointer;
+
+    &:hover {
+      background-color: #2430af;
     }
-    .footer-nav {
-      flex-direction: column;  /* Stack vertically like navbar mobile menu */
-      gap: 0.75rem;
+
+    @media screen and (min-width: 650px) {
+      font-weight: 600;
+      width: 300px;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: larger;
     }
-    .social-links {
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+.error-message {
+  width: 60%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #e0e0ff; /* MODIFIED: Error message background to light purple 2 */
+  color: var(--secondary-color);
+  font-family: var(--font-base);
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid var(--secondary-color);
+
+  .p-text {
+    font-size: 1rem;
+  }
+
+  @media screen and (min-width: 650px) {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding: 2rem;
+    font-size: 1.2rem;
   }
 }

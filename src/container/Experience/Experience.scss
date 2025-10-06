@@ -1,0 +1,1000 @@
+// .timeline-container {
+//   padding: 2rem;
+//   background-color: var(--white-color);
+//   font-family: var(--font-base);
+//   color: var(--black-color);
+//   display: flex;
+//   gap: 2rem;
+// }
+
+// .column {
+//   max-height: 600px;
+//   overflow-y: auto;
+//   padding-right: 1rem;
+//   position: relative;
+//   border-left: 2px solid var(--secondary-color);
+//   flex: 1;
+// }
+
+// .column h2 {
+//   color: var(--secondary-color);
+//   margin-bottom: 1.5rem;
+//   font-size: 1.75rem;
+//   font-weight: 700;
+// }
+
+// .timeline-scroll {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1.5rem;
+//   padding-left: 1.5rem;
+//   position: relative;
+// }
+
+// .timeline-card {
+//   background: var(--white-color);
+//   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+//   border-radius: 10px;
+//   padding: 1rem;
+//   position: relative;
+//   cursor: pointer;
+//   transition: all 0.2s ease;
+//   display: flex;
+//   gap: 1rem;
+//   align-items: flex-start;
+//   border-left: 3px solid transparent;
+// }
+
+// .timeline-card:hover {
+//   transform: translateY(-3px);
+//   border-left-color: var(--secondary-color);
+// }
+
+// .timeline-card.active {
+//   background-color: #f0f8ff; /* Updated */
+//   border-left-color: var(--secondary-color); /* Already exists */
+//   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Updated */
+//   transform: translateY(-4px); /* Slightly stronger hover */
+//   transition: all 0.25s ease-in-out;
+//   position: relative;
+// }
+
+// .timeline-marker {
+//   width: 14px;
+//   height: 14px;
+//   border-radius: 50%;
+//   background-color: var(--secondary-color);
+//   border: 3px solid var(--white-color);
+//   position: absolute;
+//   left: -2.4rem;
+//   top: 1.3rem;
+//   z-index: 2;
+// }
+
+// .card-content {
+//   flex: 1;
+// }
+
+// .duration {
+//   font-size: 0.85rem;
+//   font-weight: 600;
+//   color: var(--secondary-color);
+//   margin-bottom: 0.4rem;
+//   display: inline-block;
+// }
+
+// .details-panel {
+//   flex: 1;
+//   background: var(--lightGray-color);
+//   border-left: 2px solid var(--secondary-color);
+//   padding: 2rem;
+//   border-radius: 10px;
+//   font-size: 0.95rem;
+//   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+//   transition: all 0.3s ease;
+//   animation: fadeIn 0.3s ease;
+//   position: relative;
+// }
+
+// .details-panel h3 {
+//   margin-top: 0;
+//   margin-bottom: 0.75rem;
+//   font-size: 1.4rem;
+//   color: var(--secondary-color);
+// }
+
+// .details-panel p {
+//   margin: 0.5rem 0;
+//   color: var(--black-color);
+// }
+
+// .details-panel ul {
+//   padding-left: 1.25rem;
+//   margin-top: 0.5rem;
+//   list-style-type: disc;
+// }
+
+// .details-panel li {
+//   margin-bottom: 0.4rem;
+//   line-height: 1.4;
+//   color: var(--gray-color);
+// }
+
+// .timeline-scroll::-webkit-scrollbar {
+//   width: 6px;
+// }
+
+// .timeline-scroll::-webkit-scrollbar-thumb {
+//   background-color: var(--secondary-color);
+//   border-radius: 6px;
+// }
+
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//     transform: translateY(10px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// @media screen and (max-width: 600px) {
+//   .timeline-container {
+//     flex-direction: column;
+//   }
+
+//   .timeline-card {
+//     flex-direction: column;
+//     padding-left: 2rem;
+//   }
+
+//   .timeline-marker {
+//     left: -1.4rem;
+//   }
+
+//   .details-panel {
+//     margin-top: 1.5rem;
+//   }
+// }
+
+// /* ✅ Close button for details panel */
+// .details-panel .close-btn {
+//   position: absolute;
+//   top: 1rem;
+//   right: 1rem;
+//   font-size: 1.25rem;
+//   background-color: transparent;
+//   border: none;
+//   color: var(--secondary-color);
+//   cursor: pointer;
+//   border-radius: 50%;
+//   padding: 0.25rem 0.5rem;
+//   transition: background 0.2s ease;
+// }
+
+// .details-panel .close-btn:hover {
+//   background-color: rgba(0, 0, 0, 0.05);
+// }
+
+
+
+// =============
+
+// :root {
+//   --white-color: #ffffff;
+//   --black-color: #333333;
+//   --secondary-color: #1a73e8; /* A shade of blue for accents */
+//   --lightGray-color: #f8f9fa; /* Light background for details panel */
+//   --gray-color: #6c757d; /* For general text */
+//   --font-base: 'Roboto', sans-serif; /* Example font */
+// }
+
+// .timeline-container {
+//   padding: 2rem;
+//   background-color: var(--white-color);
+//   font-family: var(--font-base);
+//   color: var(--black-color);
+//   display: flex;
+//   gap: 2rem;
+// }
+
+// .column {
+//   max-height: 600px;
+//   overflow-y: auto;
+//   padding-right: 1rem;
+//   position: relative;
+//   border-left: 2px solid var(--secondary-color);
+//   flex: 1;
+// }
+
+// .column h2 {
+//   color: var(--secondary-color);
+//   margin-bottom: 1.5rem;
+//   font-size: 1.75rem;
+//   font-weight: 700;
+// }
+
+// .timeline-scroll {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1.5rem;
+//   padding-left: 1.5rem;
+//   position: relative;
+// }
+
+// .timeline-card {
+//   background: var(--white-color);
+//   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+//   border-radius: 10px;
+//   padding: 1rem;
+//   position: relative;
+//   cursor: pointer;
+//   transition: all 0.2s ease;
+//   display: flex;
+//   gap: 1rem;
+//   align-items: flex-start;
+//   border-left: 3px solid transparent;
+// }
+
+// .timeline-card:hover {
+//   transform: translateY(-3px);
+//   border-left-color: var(--secondary-color);
+// }
+
+// .timeline-card.active {
+//   background-color: #f0f8ff; /* Updated */
+//   border-left-color: var(--secondary-color); /* Already exists */
+//   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Updated */
+//   transform: translateY(-4px); /* Slightly stronger hover */
+//   transition: all 0.25s ease-in-out;
+//   position: relative;
+// }
+
+// .timeline-marker {
+//   width: 14px;
+//   height: 14px;
+//   border-radius: 50%;
+//   background-color: var(--secondary-color);
+//   border: 3px solid var(--white-color);
+//   position: absolute;
+//   left: -2.4rem; /* This value positions the marker relative to the timeline-card */
+//   top: 1.3rem;
+//   z-index: 2;
+// }
+
+// .card-content {
+//   flex: 1;
+// }
+
+// .duration {
+//   font-size: 0.85rem;
+//   font-weight: 600;
+//   color: var(--secondary-color);
+//   margin-bottom: 0.4rem;
+//   display: inline-block;
+// }
+
+// .details-panel {
+//   flex: 1;
+//   background: var(--lightGray-color);
+//   border-left: 2px solid var(--secondary-color);
+//   padding: 2rem;
+//   border-radius: 10px;
+//   font-size: 0.95rem;
+//   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+//   transition: all 0.3s ease;
+//   animation: fadeIn 0.3s ease;
+//   position: relative;
+// }
+
+// .details-panel h3 {
+//   margin-top: 0;
+//   margin-bottom: 0.75rem;
+//   font-size: 1.4rem;
+//   color: var(--secondary-color);
+// }
+
+// .details-panel p {
+//   margin: 0.5rem 0;
+//   color: var(--black-color);
+// }
+
+// .details-panel ul {
+//   padding-left: 1.25rem;
+//   margin-top: 0.5rem;
+//   list-style-type: disc;
+// }
+
+// .details-panel li {
+//   margin-bottom: 0.4rem;
+//   line-height: 1.4;
+//   color: var(--gray-color);
+// }
+
+// .timeline-scroll::-webkit-scrollbar {
+//   width: 6px;
+// }
+
+// .timeline-scroll::-webkit-scrollbar-thumb {
+//   background-color: var(--secondary-color);
+//   border-radius: 6px;
+// }
+
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//     transform: translateY(10px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// @media screen and (max-width: 600px) {
+//   .timeline-container {
+//     flex-direction: column;
+//   }
+
+//   .timeline-card {
+//     flex-direction: column;
+//     padding-left: 2rem;
+//   }
+
+//   .timeline-marker {
+//     left: -1.4rem;
+//   }
+
+//   .details-panel {
+//     margin-top: 1.5rem;
+//   }
+// }
+
+// /* ✅ Close button for details panel */
+// .details-panel .close-btn {
+//   position: absolute;
+//   top: 1rem;
+//   right: 1rem;
+//   font-size: 1.25rem;
+//   background-color: transparent;
+//   border: none;
+//   color: var(--secondary-color);
+//   cursor: pointer;
+//   border-radius: 50%;
+//   padding: 0.25rem 0.5rem;
+//   transition: background 0.2s ease;
+// }
+
+// .details-panel .close-btn:hover {
+//   background-color: rgba(0, 0, 0, 0.05);
+// }
+
+
+
+
+
+// :root {
+//   --white-color: #ffffff;
+//   --black-color: #333333;
+//   --secondary-color: #1a73e8; /* A shade of blue for accents */
+//   --lightGray-color: #f8f9fa; /* Light background for details panel */
+//   --gray-color: #6c757d; /* For general text */
+//   --font-base: 'Roboto', sans-serif; /* Example font */
+// }withou point
+
+
+// with point not good enof
+
+// .timeline-container {
+//   padding: 2rem;
+//   background-color: var(--white-color);
+//   font-family: var(--font-base);
+//   color: var(--black-color);
+//   display: flex;
+//   gap: 2rem;
+// }
+
+// .column {
+//   max-height: 600px;
+//   overflow-y: auto;
+//   padding-right: 1rem;
+//   position: relative;
+//   border-left: 2px solid var(--secondary-color);
+//   flex: 1;
+// }
+
+// .column h2 {
+//   color: var(--secondary-color);
+//   margin-bottom: 1.5rem;
+//   font-size: 1.75rem;
+//   font-weight: 700;
+// }
+
+// .timeline-scroll {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1.5rem;
+//   padding-left: 1.5rem;
+//   position: relative;
+// }
+
+// .timeline-card {
+//   background: var(--white-color);
+//   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+//   border-radius: 10px;
+//   padding: 1rem;
+//   position: relative;
+//   cursor: pointer;
+//   transition: all 0.2s ease;
+//   display: flex;
+//   gap: 1rem;
+//   align-items: flex-start;
+//   border-left: 3px solid transparent;
+// }
+
+// .timeline-card:hover {
+//   transform: translateY(-3px);
+//   border-left-color: var(--secondary-color);
+// }
+
+// .timeline-card.active {
+//   background-color: #f0f8ff; /* Updated */
+//   border-left-color: var(--secondary-color); /* Already exists */
+//   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Updated */
+//   transform: translateY(-4px); /* Slightly stronger hover */
+//   transition: all 0.25s ease-in-out;
+//   position: relative;
+// }
+
+// .timeline-marker {
+//   width: 14px;
+//   height: 14px;
+//   border-radius: 50%;
+//   background-color: var(--secondary-color);
+//   border: 3px solid var(--white-color);
+//   position: absolute;
+//   /* Adjusted 'left' to place the marker directly on the vertical line.
+//      Calculates: -(padding-left of timeline-scroll) - (half width of marker + marker border width)
+//      Marker total outer width = 14px (content) + 2*3px (border) = 20px
+//      Half of this is 10px.
+//   */
+//   left: calc(-1.5rem - 10px); /* This should align the center of the marker with the column's border-left */
+//   top: 1.3rem; /* Keep existing top alignment */
+//   z-index: 2;
+// }
+
+// .card-content {
+//   flex: 1;
+// }
+
+// .duration {
+//   font-size: 0.85rem;
+//   font-weight: 600;
+//   color: var(--secondary-color);
+//   margin-bottom: 0.4rem;
+//   display: inline-block;
+// }
+
+// .details-panel {
+//   flex: 1;
+//   background: var(--lightGray-color);
+//   border-left: 2px solid var(--secondary-color);
+//   padding: 2rem;
+//   border-radius: 10px;
+//   font-size: 0.95rem;
+//   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+//   transition: all 0.3s ease;
+//   animation: fadeIn 0.3s ease;
+//   position: relative;
+// }
+
+// .details-panel h3 {
+//   margin-top: 0;
+//   margin-bottom: 0.75rem;
+//   font-size: 1.4rem;
+//   color: var(--secondary-color);
+// }
+
+// .details-panel p {
+//   margin: 0.5rem 0;
+//   color: var(--black-color);
+// }
+
+// .details-panel ul {
+//   padding-left: 1.25rem;
+//   margin-top: 0.5rem;
+//   list-style-type: disc;
+// }
+
+// .details-panel li {
+//   margin-bottom: 0.4rem;
+//   line-height: 1.4;
+//   color: var(--gray-color);
+// }
+
+// .timeline-scroll::-webkit-scrollbar {
+//   width: 6px;
+// }
+
+// .timeline-scroll::-webkit-scrollbar-thumb {
+//   background-color: var(--secondary-color);
+//   border-radius: 6px;
+// }
+
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//     transform: translateY(10px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// @media screen and (max-width: 600px) {
+//   .timeline-container {
+//     flex-direction: column;
+//   }
+
+//   .timeline-card {
+//     flex-direction: column;
+//     padding-left: 2rem;
+//   }
+
+//   /* Removed the specific left override for .timeline-marker here
+//      to ensure consistent alignment across all screen sizes.
+//      The general .timeline-marker rule now applies to smaller screens too.
+//   */
+
+//   .details-panel {
+//     margin-top: 1.5rem;
+//   }
+// }
+
+// /* ✅ Close button for details panel */
+// .details-panel .close-btn {
+//   position: absolute;
+//   top: 1rem;
+//   right: 1rem;
+//   font-size: 1.25rem;
+//   background-color: transparent;
+//   border: none;
+//   color: var(--secondary-color);
+//   cursor: pointer;
+//   border-radius: 50%;
+//   padding: 0.25rem 0.5rem;
+//   transition: background 0.2s ease;
+// }
+
+// .details-panel .close-btn:hover {
+//   background-color: rgba(0, 0, 0, 0.05);
+// }
+
+
+// :root {
+//   --white-color: #ffffff;
+//   --black-color: #333333;
+//   --secondary-color: #1a73e8; /* A shade of blue for accents */
+//   --lightGray-color: #f8f9fa; /* Light background for details panel */
+//   --gray-color: #6c757d; /* For general text */
+//   --font-base: 'Roboto', sans-serif; /* Example font */
+// }
+
+// .timeline-container {
+//   padding: 2rem;
+//   background-color: var(--white-color);
+//   font-family: var(--font-base);
+//   color: var(--black-color);
+//   display: flex;
+//   gap: 2rem;
+// }
+
+// .column {
+//   max-height: 600px;
+//   overflow-y: auto;
+//   padding-right: 1rem;
+//   position: relative;
+//   border-left: 2px solid var(--secondary-color);
+//   flex: 1;
+//   // z-index: 10;
+// }
+
+// .column h2 {
+//   color: var(--secondary-color);
+//   margin-bottom: 1.5rem;
+//   font-size: 1.75rem;
+//   font-weight: 700;
+// }
+
+// .timeline-scroll {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1.5rem;
+//   padding-left: 1.5rem;
+//   position: relative;
+// }
+
+// .timeline-card {
+//   background: var(--white-color);
+//   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+//   border-radius: 10px;
+//   padding: 1rem;
+//   position: relative;
+//   cursor: pointer;
+//   transition: all 0.2s ease;
+//   display: flex;
+//   gap: 1rem;
+//   align-items: flex-start;
+//   border-left: 3px solid transparent;
+// }
+
+// .timeline-card:hover {
+//   transform: translateY(-3px);
+//   border-left-color: var(--secondary-color);
+// }
+
+// .timeline-card.active {
+//   background-color: #f0f8ff; /* Updated */
+//   border-left-color: var(--secondary-color); /* Already exists */
+//   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Updated */
+//   transform: translateY(-4px); /* Slightly stronger hover */
+//   transition: all 0.25s ease-in-out;
+//   position: relative;
+// }
+
+// .timeline-marker {
+//   width: 20px;
+//   height: 24px;
+//   border-radius: 50%;
+//   background-color: var(--secondary-color);
+//   border: 3px solid var(--white-color);
+//   position: absolute;
+//   /* Adjusted 'left' to place the marker directly on the vertical line.
+//      Calculates: -(padding-left of timeline-scroll) - (half width of marker + marker border width)
+//      Marker total outer width = 14px (content) + 2*3px (border) = 20px
+//      Half of this is 10px.
+//   */
+//   left: calc(-1.6rem - 12px); /* This should align the center of the marker with the column's border-left */
+//   top: 1.3rem; /* Keep existing top alignment */
+//   z-index: 2;
+// }
+
+// .card-content {
+//   flex: 1;
+// }
+
+// .duration {
+//   font-size: 0.85rem;
+//   font-weight: 600;
+//   color: var(--secondary-color);
+//   margin-bottom: 0.4rem;
+//   display: inline-block;
+// }
+
+// .details-panel {
+//   flex: 1;
+//   background: var(--lightGray-color);
+//   border-left: 2px solid var(--secondary-color);
+//   padding: 2rem;
+//   border-radius: 10px;
+//   font-size: 0.95rem;
+//   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+//   transition: all 0.3s ease;
+//   animation: fadeIn 0.3s ease;
+//   position: relative;
+// }
+
+// .details-panel h3 {
+//   margin-top: 0;
+//   margin-bottom: 0.75rem;
+//   font-size: 1.4rem;
+//   color: var(--secondary-color);
+// }
+
+// .details-panel p {
+//   margin: 0.5rem 0;
+//   color: var(--black-color);
+// }
+
+// .details-panel ul {
+//   padding-left: 1.25rem;
+//   margin-top: 0.5rem;
+//   list-style-type: disc;
+// }
+
+// .details-panel li {
+//   margin-bottom: 0.4rem;
+//   line-height: 1.4;
+//   color: var(--gray-color);
+// }
+
+// .timeline-scroll::-webkit-scrollbar {
+//   width: 6px;
+// }
+
+// .timeline-scroll::-webkit-scrollbar-thumb {
+//   background-color: var(--secondary-color);
+//   border-radius: 6px;
+// }
+
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//     transform: translateY(10px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// @media screen and (max-width: 600px) {
+//   .timeline-container {
+//     flex-direction: column;
+//   }
+
+//   .timeline-card {
+//     flex-direction: column;
+//     padding-left: 2rem;
+//   }
+
+//   /* Removed the specific left override for .timeline-marker here
+//      to ensure consistent alignment across all screen sizes.
+//      The general .timeline-marker rule now applies to smaller screens too.
+//   */
+
+//   .details-panel {
+//     margin-top: 1.5rem;
+//   }
+// }
+
+// /* ✅ Close button for details panel */
+// .details-panel .close-btn {
+//   position: absolute;
+//   top: 1rem;
+//   right: 1rem;
+//   font-size: 1.25rem;
+//   background-color: transparent;
+//   border: none;
+//   color: var(--secondary-color);
+//   cursor: pointer;
+//   border-radius: 50%;
+//   padding: 0.25rem 0.5rem;
+//   transition: background 0.2s ease;
+// }
+
+// .details-panel .close-btn:hover {
+//   background-color: rgba(0, 0, 0, 0.05);
+// }
+
+
+
+// =========
+// :root {
+//   --white-color: #ffffff;
+//   --black-color: #333333;
+//   --secondary-color: #1a73e8; /* A shade of blue for accents */
+//   --lightGray-color: #f8f9fa; /* Light background for details panel */
+//   --gray-color: #6c757d; /* For general text */
+//   --font-base: 'Roboto', sans-serif; /* Example font */
+// }
+.timeline-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 2rem;
+}
+.timeline-container {
+  padding: 2rem;
+  background-color: var(--white-color);
+  font-family: var(--font-base);
+  color: var(--black-color);
+  display: flex;
+  gap: 2rem;
+}
+
+.column {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 1rem;
+  position: relative;
+  border-left: 2px solid var(--secondary-color);
+  flex: 1;
+}
+
+.column h2 {
+  color: black;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  font-size:2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.timeline-card {
+  background: var(--white-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  padding: 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  border-left: 3px solid transparent;
+}
+
+.timeline-card:hover {
+  transform: translateY(-3px);
+  border-left-color: var(--secondary-color);
+}
+
+.timeline-card.active {
+  background-color: #f0f8ff;
+  border-left-color: var(--secondary-color);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  transition: all 0.25s ease-in-out;
+  position: relative;
+}
+
+.timeline-marker {
+  width: 20px;
+  height: 24px; /* Note: this makes it an ellipse, not a perfect circle */
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  border: 3px solid var(--white-color);
+  position: absolute;
+  left: calc(-1.5rem - 13px);
+  top: 1.3rem;
+  z-index: 2;
+}
+
+.card-content {
+  flex: 1;
+  position: relative;
+}
+
+.duration {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 0.4rem;
+  display: inline-block;
+}
+
+/* NEW: Style for the institution name */
+.institution-name {
+  font-size: 0.95rem; /* Slightly larger than duration, but smaller than title */
+  font-style: italic; /* Make it italic */
+  color: var(--gray-color); /* Use a subtle gray color for distinction */
+  margin-top: -0.2rem; /* Pull it up slightly closer to the title */
+  margin-bottom: 0.5rem; /* Space it out from the summary */
+  display: block; /* Ensure it takes its own line */
+}
+
+
+.expand-indicator {
+  font-size: 0.75rem;
+  color: var(--gray-color);
+  text-align: right;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.timeline-card:not(.active) .expand-indicator {
+  opacity: 1;
+}
+
+.timeline-card.active .expand-indicator {
+  opacity: 0;
+}
+
+.details-panel {
+  flex: 1;
+  background: var(--lightGray-color);
+  border-left: 2px solid var(--secondary-color);
+  padding: 2rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.3s ease;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.details-panel h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+}
+
+.details-panel p {
+  margin: 0.5rem 0;
+  color: var(--black-color);
+}
+
+.details-panel ul {
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+  list-style-type: disc;
+}
+
+.details-panel li {
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+  color: var(--gray-color);
+}
+
+.timeline-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 6px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeline-container {
+    flex-direction: column;
+  }
+
+  .timeline-card {
+    flex-direction: column;
+    padding-left: 2rem;
+  }
+
+  .details-panel {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Close button for details panel */
+.details-panel .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.25rem;
+  background-color: transparent;
+  border: none;
+  color: var(--secondary-color);
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.25rem 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.details-panel .close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}

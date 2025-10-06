@@ -1,1322 +1,177 @@
-// .app__navbar {
-//   width: 100%;
-
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 1rem 2rem;
-//   background: rgba(255, 255, 255, 0.25);
-//   backdrop-filter: blur(4px);
-//   -webkit-backdrop-filter: blur(4px);
-//   border: 1px solid rgba(255, 255, 255, 0.1);
-//   position: fixed;
-//   //   top: 0;
-//   z-index: 2;
-// }
-// .app__navbar-logo {
-//   display: flex;
-//   justify-content: flex-start;
-//   align-self: center;
-
-//   a{
-//     color: var(--gray-color);
-//     text-decoration: none;
-//     display: flex;
-//     gap: 10px;
-//     align-items: center;
-//     justify-content: center;
-
-//     p{
-//       font-size: 1rem;
-//       font-weight: 500;
-//       text-transform: uppercase;
-
-//       @media screen and (min-width: 450px) {
-//         font-size: 1.3rem;
-//       }
-//     }
-//     &:hover{
-//       color: var(--secondary-color);
-//     }
-//   }
-
-
-// }
-
-// .app__navbar-links {
-//   flex: 1;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-//   list-style: none;
-
-//   li {
-//     margin: 0 1rem;
-//     flex-direction: column;
-//     cursor: pointer;
-
-//     div {
-//       width: 5px;
-//       height: 5px;
-//       background: transparent;
-//       border-radius: 50%;
-
-//       margin-bottom: 5px;
-//     }
-//     a {
-//       color: var(--gray-color);
-//       text-decoration: none;
-//       flex-direction: column;
-
-//       text-transform: uppercase;
-//       font-weight: 500;
-//       font-size: larger;
-
-//       transition: all 0.3s ease-in-out;
-
-//       &:hover {
-//         color: var(--secondary-color);
-//       }
-//     }
-//     &:hover {
-//       div {
-//         background: var(--secondary-color);
-//       }
-//     }
-//   }
-//   @media screen and (max-width: 900px) {
-//     display: none;
-//   }
-// }
-
-// .app__navbar-menu {
-//   width: 35px;
-//   height: 35px;
-//   border-radius: 50%;
-//   position: relative;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-//   background: var(--secondary-color);
-
-//   svg {
-//     width: 70%;
-//     height: 70%;
-//     color: var(--white-color);
-//   }
-
-//   div {
-//     position: fixed;
-//     top: 0;
-//     bottom: 0;
-//     right: 0;
-//     z-index: 5;
-//     padding: 1rem;
-
-//     width: 80%;
-//     height: 100vh;
-
-//     display: flex;
-//     justify-content: flex-end;
-//     align-items: flex-end;
-//     flex-direction: column;
-
-//     background: url("../../assets/bgWhite.png");
-//     background-color: var(--white-color);
-//     background-size: cover;
-//     background-repeat: repeat;
-
-//     box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
-
-//     svg {
-//       width: 35px;
-//       height: 35px;
-//       color: var(--secondary-color);
-//       margin: 0.5rem 1rem;
-//     }
-//     ul {
-//       list-style: none;
-//       margin: 0;
-//       padding: 0;
-//       height: 100%;
-//       width: 100%;
-
-//       display: flex;
-//       justify-content: flex-start;
-//       align-items: flex-start;
-//       flex-direction: column;
-
-//       li {
-//         margin: 1rem;
-//         cursor: pointer;
-
-//         a {
-//           color: var(--gray-color);
-//           text-decoration: none;
-//           font-size: 1rem;
-//           text-transform: uppercase;
-//           font-weight: 500;
-
-//           transition: all 0.3s ease-in-out;
-
-//           &:hover {
-//             color: var(--secondary-color);
-//           }
-//         }
-//       }
-//     }
-//     @media screen and (min-width: 900px) {
-//       display: none;
-//     }
-//   }
-//   @media screen and (min-width: 900px) {
-//     display: none;
-//   }
-// }
-
-
-
-// :root {
-//   --pink-dark: #C71585;         // Darker pink for navbar
-//   --pink-light: #FFB6C1;        // Light pink for hover
-//   --gold-glossy: #FFD700;       // Glossy gold for donate button
-//   --white-color: #FFFFFF;
-//   --gray-color: #808080;
-//   --font-base: 'Aeonik', sans-serif;
-// }
-// .healogo {
-//   width: 60px;
-//   height: auto;
-//   border-radius: 8px;
-//   box-shadow: 0 0 8px rgba(255, 182, 193, 0.6); // soft pink glow
-//   transition: transform 0.3s ease, box-shadow 0.3s ease;
-//   object-fit: contain;
-
-//   &:hover {
-//     transform: scale(1.1);
-//     box-shadow: 0 0 12px rgba(255, 182, 193, 0.9);
-//   }}
-// .app__navbar {
-//   width: 100%;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 1rem 2rem;
-//   background-color: var(--pink-dark);
-//   font-family: var(--font-base);
-//   box-shadow: 0 4px 12px rgba(199, 21, 133, 0.3);
-//   position: fixed;
-//   z-index: 2;
-// }
-
-// .app__navbar-logo {
-//   display: flex;
-//   justify-content: flex-start;
-//   align-self: center;
-
-//   a {
-//     color: var(--white-color);
-//     text-decoration: none;
-//     display: flex;
-//     gap: 10px;
-//     align-items: center;
-//     justify-content: center;
-
-//     p {
-//       font-size: 1.3rem;
-//       font-weight: 600;
-//       text-transform: uppercase;
-//     }
-
-//     &:hover {
-//       color: var(--pink-light);
-//     }
-//   }
-// }
-
-// .app__navbar-links {
-//   flex: 1;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   list-style: none;
-
-//   li {
-//     margin: 0 1rem;
-//     flex-direction: column;
-//     cursor: pointer;
-
-//     div {
-//       width: 5px;
-//       height: 5px;
-//       background: transparent;
-//       border-radius: 50%;
-//       margin-bottom: 5px;
-//     }
-
-//     a {
-//       color: var(--white-color);
-//       text-decoration: none;
-//       text-transform: uppercase;
-//       font-weight: 500;
-//       font-size: larger;
-//       transition: all 0.3s ease-in-out;
-
-//       &:hover {
-//         color: var(--pink-light);
-//       }
-//     }
-
-//     &:hover {
-//       div {
-//         background: var(--pink-light);
-//       }
-//     }
-//   }
-
-//   @media screen and (max-width: 900px) {
-//     display: none;
-//   }
-// }
-
-// .app__navbar-menu {
-//   width: 35px;
-//   height: 35px;
-//   border-radius: 50%;
-//   position: relative;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   background: var(--pink-light);
-
-//   svg {
-//     width: 70%;
-//     height: 70%;
-//     color: var(--white-color);
-//   }
-
-//   div {
-//     position: fixed;
-//     top: 0;
-//     bottom: 0;
-//     right: 0;
-//     z-index: 5;
-//     padding: 1rem;
-//     width: 80%;
-//     height: 100vh;
-//     display: flex;
-//     justify-content: flex-end;
-//     align-items: flex-end;
-//     flex-direction: column;
-//     background-color: var(--white-color);
-//     background-size: cover;
-//     background-repeat: repeat;
-//     box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
-
-//     svg {
-//       width: 35px;
-//       height: 35px;
-//       color: var(--pink-dark);
-//       margin: 0.5rem 1rem;
-//     }
-
-//     ul {
-//       list-style: none;
-//       margin: 0;
-//       padding: 0;
-//       height: 100%;
-//       width: 100%;
-//       display: flex;
-//       justify-content: flex-start;
-//       align-items: flex-start;
-//       flex-direction: column;
-
-//       li {
-//         margin: 1rem;
-//         cursor: pointer;
-
-//         a {
-//           color: var(--gray-color);
-//           text-decoration: none;
-//           font-size: 1rem;
-//           text-transform: uppercase;
-//           font-weight: 500;
-//           transition: all 0.3s ease-in-out;
-
-//           &:hover {
-//             color: var(--pink-dark);
-//           }
-//         }
-//       }
-//     }
-
-//     @media screen and (min-width: 900px) {
-//       display: none;
-//     }
-//   }
-
-//   @media screen and (min-width: 900px) {
-//     display: none;
-//   }
-// }
-
-// .app__navbar-donate {
-//   margin-left: auto;
-//   margin-right: 0;
-//   padding: 0.75rem 1.5rem;
-//   background: linear-gradient(135deg, var(--gold-glossy), #f6e27a);
-//   color: var(--pink-dark);
-//   font-weight: 700;
-//   font-size: 1rem;
-//   border: none;
-//   border-radius: 12px;
-//   box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
-//   cursor: pointer;
-//   transition: all 0.3s ease-in-out;
-//   font-family: var(--font-base);
-
-//   &:hover {
-//     background: linear-gradient(135deg, #f6e27a, var(--gold-glossy));
-//     color: var(--white-color);
-//     transform: scale(1.05);
-//   }
-// }
-
-
-// ========
-
-/* Root variables */
-
-
-
-// :root {
-//   --pink-dark: #C71585;         /* Darker pink for navbar */
-//   --pink-darker-hover: #a30b67; /* Even darker pink for link bg hover */
-//   --pink-light: #FFB6C1;        /* Light pink for other hover styles */
-//   --gold-glossy: #FFD700;       /* Glossy gold for donate button */
-//   --white-color: #FFFFFF;
-//   --gray-color: #808080;
-//   --font-base: 'Aeonik', sans-serif;
-// }
-
-// /* Logo styling */
-// .healogo {
-//   width: 60px;
-//   height: auto;
-//   border-radius: 8px;
-//   box-shadow: 0 0 8px rgba(255, 182, 193, 0.6); /* soft pink glow */
-//   transition: transform 0.3s ease, box-shadow 0.3s ease;
-//   object-fit: contain;
-//   cursor: pointer;
-// }
-
-// .healogo:hover {
-//   transform: scale(1.1);
-//   box-shadow: 0 0 12px rgba(255, 182, 193, 0.9);
-// }
-
-// /* Navbar container */
-// .app__navbar {
-//   width: 100%;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 1rem 2rem;
-//   background-color: var(--pink-dark);
-//   font-family: var(--font-base);
-//   box-shadow: 0 4px 12px rgba(199, 21, 133, 0.3);
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   z-index: 1000;
-// }
-
-// /* Navbar logo */
-// .app__navbar-logo {
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-// }
-
-// .app__navbar-logo a {
-//   color: var(--white-color);
-//   text-decoration: none;
-//   display: flex;
-//   gap: 10px;
-//   align-items: center;
-//   font-weight: 600;
-//   font-size: 1rem;
-//   text-transform: uppercase;
-//   cursor: pointer;
-//   user-select: none;
-// }
-
-// .app__navbar-logo a:hover {
-//   color: var(--pink-light);
-// }
-
-// /* Navbar links container */
-// .app__navbar-links {
-//   flex: 1;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   list-style: none;
-//   margin: 0;
-//   padding: 0;
-// }
-
-// /* Individual navbar link items */
-// .app__navbar-links li {
-//   margin: 0 1rem;
-//   cursor: pointer;
-//   position: relative;
-//   width: max-content; /* shrink to content size */
-//   border-radius: 6px;
-//   transition: background-color 0.3s ease;
-// }
-
-// /* Full width background highlight on hover */
-// .app__navbar-links li:hover,
-// .app__navbar-links li:focus-within {
-//   background-color: var(--pink-darker-hover);
-// }
-
-// /* Dot indicator above the links (empty div) */
-// .app__navbar-links li div {
-//   width: 5px;
-//   height: 5px;
-//   background: transparent;
-//   border-radius: 50%;
-//   margin: 0 auto 5px auto;
-//   transition: background-color 0.3s ease;
-// }
-
-// /* On hover, show pink dot */
-// .app__navbar-links li:hover div,
-// .app__navbar-links li:focus-within div {
-//   background: var(--pink-light);
-// }
-
-// /* Navbar links anchor tags */
-// .app__navbar-links li a {
-//   color: var(--white-color);
-//   text-decoration: none;
-//   text-transform: uppercase;
-//   font-weight: 500;
-//   font-size: 0.9rem; /* larger */
-//   padding: 0.5rem 1rem;
-//   display: block;
-//   border-radius: 6px;
-//   transition: color 0.3s ease;
-//   user-select: none;
-// }
-
-// /* Remove color change on hover to keep consistent text color as requested */
-// .app__navbar-links li:hover a,
-// .app__navbar-links li:focus-within a {
-//   color: var(--white-color);
-// }
-
-// /* Responsive: hide navbar links on smaller screens */
-// @media screen and (max-width: 900px) {
-//   .app__navbar-links {
-//     display: none;
-//   }
-// }
-
-// /* Navbar menu icon for mobile */
-// .app__navbar-menu {
-//   width: 35px;
-//   height: 35px;
-//   border-radius: 50%;
-//   background: var(--pink-light);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   cursor: pointer;
-//   position: relative;
-//   z-index: 1100;
-//   transition: background-color 0.3s ease;
-// }
-
-// .app__navbar-menu:hover {
-//   background: var(--pink-dark);
-// }
-
-// .app__navbar-menu svg {
-//   width: 70%;
-//   height: 70%;
-//   color: var(--white-color);
-//   pointer-events: none;
-// }
-
-// /* Sliding menu container */
-// .app__navbar-menu > div {
-//   position: fixed;
-//   top: 0;
-//   bottom: 0;
-//   right: 0;
-//   z-index: 1050;
-//   padding: 2rem 1.5rem 1.5rem 2rem;
-//   width: 80%;
-//   max-width: 320px;
-//   height: 100vh;
-//   background-color: var(--pink-dark);
-//   background-image: linear-gradient(135deg, #ce4383 0%, #a30b67 100%);
-//   box-shadow: -4px 0 20px rgba(199, 21, 133, 0.7);
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-start;
-//   overflow-y: auto;
-//   border-radius: 12px 0 0 12px;
-//   user-select: none;
-// }
-
-// /* Close icon inside sliding menu */
-// .app__navbar-menu > div svg {
-//   width: 30px;
-//   height: 30px;
-//   color: var(--white-color);
-//   margin-left: auto;
-//   cursor: pointer;
-// }
-
-// /* Sliding menu list */
-// .app__navbar-menu > div ul {
-//   width: 100%;
-//   margin: 2rem 0 0 0;
-//   padding: 0;
-//   list-style: none;
-//   display: flex;
-//   flex-direction: column;
-//   gap: 1.5rem;
-// }
-
-// /* Sliding menu list items */
-// .app__navbar-menu > div ul li {
-//   width: 100%;
-//   border-radius: 8px;
-//   transition: background-color 0.3s ease;
-// }
-
-// /* Sliding menu list item hover/focus background */
-// .app__navbar-menu > div ul li:hover,
-// .app__navbar-menu > div ul li:focus-within {
-//   background-color: var(--pink-light);
-// }
-
-// /* Sliding menu anchor links */
-// .app__navbar-menu > div ul li a {
-//   color: var(--white-color);
-//   text-decoration: none;
-//   font-size: 1.125rem;
-//   text-transform: uppercase;
-//   font-weight: 600;
-//   padding: 0.75rem 1rem;
-//   display: block;
-//   border-radius: 8px;
-//   transition: color 0.3s ease;
-//   user-select: none;
-// }
-
-// /* On hover sliding menu links text  
-//    keep text color white for accessibility */
-// .app__navbar-menu > div ul li:hover a,
-// .app__navbar-menu > div ul li:focus-within a {
-//   color: var(--white-color);
-// }
-
-// /* Responsive: hide hamburger menu on large screens */
-// @media screen and (min-width: 900px) {
-//   .app__navbar-menu {
-//     display: none;
-//   }
-// }
-
-// /* Donate button styling */
-// .app__navbar-donate {
-//   margin-left: auto;
-//   padding: 0.75rem 1.5rem;
-//   background: linear-gradient(135deg, var(--gold-glossy), #f6e27a);
-//   color: var(--pink-dark);
-//   font-weight: 700;
-//   font-size: 1rem;
-//   border: none;
-//   border-radius: 12px;
-//   box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
-//   cursor: pointer;
-//   transition: all 0.3s ease-in-out;
-//   font-family: var(--font-base);
-//   user-select: none;
-//   white-space: nowrap;
-// }
-
-// .app__navbar-donate:hover,
-// .app__navbar-donate:focus {
-//   background: linear-gradient(135deg, #f6e27a, var(--gold-glossy));
-//   color: var(--white-color);
-//   transform: scale(1.05);
-//   outline: none;
-// }
-
-// /* Accessible focus states */
-// .app__navbar-links li a:focus-visible,
-// .app__navbar-menu > div ul li a:focus-visible,
-// .app__navbar-donate:focus-visible {
-//   outline: 2px solid var(--pink-light);
-//   outline-offset: 2px;
-// }
-
-// /* Scroll padding to compensate for fixed navbar */
-// html {
-//   scroll-padding-top: 80px; /* Adjust according to navbar height */
-// }
-
-// /* Overlay for sidebar */
-// .app__navbar-menu-overlay {
-//   position: fixed;
-//   inset: 0;
-//   background-color: rgba(0, 0, 0, 0.3);
-//   z-index: 1040;
-//   display: flex;
-//   justify-content: flex-end;
-// }
-
-// /* Sidebar content */
-// .app__navbar-menu-content {
-//   background-color: var(--pink-dark);
-//   background-image: linear-gradient(135deg, #ce4383 0%, #a30b67 100%);
-//   width: 80%;
-//   max-width: 320px;
-//   height: 100vh;
-//   padding: 2rem 1.5rem 1.5rem 2rem;
-//   box-shadow: -4px 0 20px rgba(199, 21, 133, 0.7);
-//   border-radius: 12px 0 0 12px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-start;
-//   overflow-y: auto;
-//   z-index: 1050;
-// }
-
-
-
-// // ======
-
-
-
-// /* Navbar container */
-// .app__navbar {
-//   width: 100%;
-//   display: flex;
-//   justify-content: space-between; /* logo left, right side right */
-//   align-items: center;
-//   padding: 1rem 2rem;
-//   background-color: var(--pink-dark);
-//   font-family: var(--font-base);
-//   box-shadow: 0 4px 12px rgba(199, 21, 133, 0.3);
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   z-index: 1000;
-// }
-
-// /* Right section for links + donate button */
-// .app__navbar-right {
-//   display: flex;
-//   align-items: center;
-//   gap: 1rem; /* space between nav links and donate */
-// }
-
-// /* Navbar links container */
-// .app__navbar-links {
-//   display: flex;
-//   justify-content: flex-end; /* push links to the right */
-//   align-items: center;
-//   list-style: none;
-//   margin: 0;
-//   padding: 0;
-//   gap: 1rem; /* spacing between links */
-// }
-
-// /* Donate button spacing */
-// .app__navbar-donate {
-//   margin-left: 1rem;
-// }
-
-
-
-// ========
-
-
-// /* Navbar.scss */
-// :root {
-//   --pink-dark: #C71585;
-//   --pink-darker-hover: #a30b67;
-//   --pink-light: #FFB6C1;
-//   --gold-glossy: #FFD700;
-//   --white-color: #FFFFFF;
-//   --gray-color: #808080;
-//   --font-base: 'Nunito', sans-serif; /* Friendly professional font */
-// }
-
-// /* Logo styling */
-// .healogo {
-//   width: 60px;
-//   height: auto;
-//   border-radius: 8px;
-//   box-shadow: 0 0 8px rgba(255, 182, 193, 0.6);
-//   transition: transform 0.3s ease, box-shadow 0.3s ease;
-//   object-fit: contain;
-//   cursor: pointer;
-// }
-
-// .healogo:hover {
-//   transform: scale(1.1);
-//   box-shadow: 0 0 12px rgba(255, 182, 193, 0.9);
-// }
-
-// /* Navbar container */
-// .app__navbar {
-//   width: 100%;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 1rem 3rem;
-//   background-color: var(--pink-dark);
-//   font-family: var(--font-base);
-//   box-shadow: 0 4px 12px rgba(199, 21, 133, 0.3);
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   z-index: 1000;
-// }
-
-// /* Navbar logo */
-// .app__navbar-logo a {
-//   color: var(--white-color);
-//   text-decoration: none;
-//   display: flex;
-//   gap: 12px;
-//   align-items: center;
-//   font-weight: 700;
-//   font-size: 1.1rem;
-//   text-transform: capitalize;
-// }
-
-// /* Right section for links + donate button */
-// .app__navbar-right {
-//   display: flex;
-//   align-items: center;
-//   gap: 2rem; /* space between nav links and donate button */
-// }
-
-// /* Navbar links */
-// .app__navbar-links {
-//   display: flex;
-//   align-items: center;
-//   list-style: none;
-//   margin: 0;
-//   padding: 0;
-//   gap: 1.5rem; /* space between links */
-// }
-
-// .app__navbar-links li a {
-//   color: var(--white-color);
-//   text-decoration: none;
-//   font-weight: 600;
-//   text-transform: capitalize;
-//   font-size: clamp(0.875rem, 1vw, 1rem); /* responsive font size */
-//   padding: 0.5rem 0.75rem;
-//   border-radius: 6px;
-//   transition: background-color 0.3s ease;
-// }
-
-// .app__navbar-links li a:hover,
-// .app__navbar-links li a:focus {
-//   background-color: var(--pink-darker-hover);
-// }
-
-// /* Donate button */
-// .app__navbar-donate {
-//   padding: 0.6rem 1.5rem;
-//   background: linear-gradient(135deg, var(--gold-glossy), #f6e27a);
-//   color: var(--pink-dark);
-//   font-weight: 700;
-//   font-size: clamp(0.875rem, 1vw, 1rem);
-//   border: none;
-//   border-radius: 12px;
-//   cursor: pointer;
-//   transition: all 0.3s ease;
-//   white-space: nowrap;
-// }
-
-// .app__navbar-donate:hover {
-//   background: linear-gradient(135deg, #f6e27a, var(--gold-glossy));
-//   color: var(--white-color);
-//   transform: scale(1.05);
-// }
-
-// /* Mobile menu icon */
-// .app__navbar-menu {
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 50%;
-//   background: var(--pink-light);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   cursor: pointer;
-//   z-index: 1100;
-// }
-
-// .app__navbar-menu svg {
-//   width: 70%;
-//   height: 70%;
-//   color: var(--white-color);
-// }
-
-// /* Responsive adjustments */
-// @media screen and (max-width: 1024px) {
-//   .app__navbar {
-//     padding: 1rem 2rem;
-//   }
-//   .app__navbar-right {
-//     gap: 1.5rem;
-//   }
-// }
-
-// @media screen and (max-width: 900px) {
-//   .app__navbar-links {
-//     display: none;
-//   }
-//   .app__navbar-right {
-//     gap: 1rem;
-//   }
-// }
-
-
-
-
-
-// /* Navbar.scss */
-// :root {
-//   --pink-dark: #C71585;
-//   --pink-darker-hover: #a30b67;
-//   --pink-light: #FFB6C1;
-//   --gold-glossy: #FFD700;
-//   --white-color: #FFFFFF;
-//   --gray-color: #808080;
-//   --font-base: 'Nunito', sans-serif;
-// }
-
-// /* Logo */
-// .healogo {
-//   width: 60px;
-//   height: auto;
-//   border-radius: 8px;
-//   box-shadow: 0 0 8px rgba(255, 182, 193, 0.6);
-//   transition: transform 0.3s ease, box-shadow 0.3s ease;
-//   object-fit: contain;
-//   cursor: pointer;
-// }
-
-// .healogo:hover {
-//   transform: scale(1.1);
-//   box-shadow: 0 0 12px rgba(255, 182, 193, 0.9);
-// }
-
-// /* Navbar container */
-// .app__navbar {
-//   width: 100%;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 1rem 3rem;
-//   background-color: var(--pink-dark);
-//   font-family: var(--font-base);
-//   box-shadow: 0 4px 12px rgba(199, 21, 133, 0.3);
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   z-index: 1000;
-// }
-
-// /* Navbar logo text */
-// .app__navbar-logo a {
-//   color: var(--white-color);
-//   text-decoration: none;
-//   display: flex;
-//   gap: 12px;
-//   align-items: center;
-//   font-weight: 700;
-//   font-size: 1.1rem;
-//   text-transform: capitalize;
-// }
-
-// /* Right section */
-// .app__navbar-right {
-//   display: flex;
-//   align-items: center;
-//   gap: 2rem;
-// }
-
-// /* Navbar links */
-// .app__navbar-links {
-//   display: flex;
-//   align-items: center;
-//   list-style: none;
-//   margin: 0;
-//   padding: 0;
-//   gap: 2rem;
-// }
-
-// .app__navbar-links li a {
-//   color: var(--white-color);
-//   text-decoration: none;
-//   font-weight: 600;
-//   text-transform: capitalize;
-//   font-size: clamp(0.875rem, 1vw, 1rem);
-//   padding: 0.5rem 0.75rem;
-//   border-radius: 6px;
-//   transition: background-color 0.3s ease;
-// }
-
-// .app__navbar-links li a:hover,
-// .app__navbar-links li a:focus {
-//   background-color: var(--pink-darker-hover);
-// }
-
-// /* Donate button */
-// .app__navbar-donate {
-//   padding: 0.6rem 1.5rem;
-//   background: linear-gradient(135deg, var(--gold-glossy), #f6e27a);
-//   color: var(--pink-dark);
-//   font-weight: 700;
-//   font-size: clamp(0.875rem, 1vw, 1rem);
-//   border: none;
-//   border-radius: 12px;
-//   cursor: pointer;
-//   transition: all 0.3s ease;
-//   white-space: nowrap;
-// }
-
-// .app__navbar-donate:hover {
-//   background: linear-gradient(135deg, #f6e27a, var(--gold-glossy));
-//   color: var(--white-color);
-//   transform: scale(1.05);
-// }
-
-// /* Mobile menu icon */
-// .app__navbar-menu {
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 50%;
-//   background: var(--pink-light);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   cursor: pointer;
-//   z-index: 1100;
-// }
-
-// .app__navbar-menu svg {
-//   width: 70%;
-//   height: 70%;
-//   color: var(--white-color);
-// }
-
-// /* Mobile menu overlay */
-// .app__navbar-menu-overlay {
-//   position: fixed;
-//   inset: 0;
-//   background-color: rgba(0,0,0,0.3);
-//   z-index: 1040;
-//   display: flex;
-//   justify-content: flex-end;
-// }
-
-// .app__navbar-menu-content {
-//   background-color: var(--pink-dark);
-//   background-image: linear-gradient(135deg, #ce4383 0%, #a30b67 100%);
-//   width: 80%;
-//   max-width: 320px;
-//   height: 100vh;
-//   padding: 2rem 1.5rem 1.5rem 2rem;
-//   box-shadow: -4px 0 20px rgba(199,21,133,0.7);
-//   border-radius: 12px 0 0 12px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-start;
-//   overflow-y: auto;
-//   z-index: 1050;
-// }
-
-// .app__navbar-menu-content ul {
-//   width: 100%;
-//   margin: 2rem 0 0 0;
-//   padding: 0;
-//   list-style: none;
-//   display: flex;
-//   flex-direction: column;
-//   gap: 1.5rem;
-// }
-
-// .app__navbar-menu-content ul li a {
-//   color: var(--white-color);
-//   text-decoration: none;
-//   font-size: 1.125rem;
-//   text-transform: capitalize;
-//   font-weight: 600;
-//   padding: 0.75rem 1rem;
-//   display: block;
-//   border-radius: 8px;
-//   transition: background-color 0.3s ease;
-// }
-
-// .app__navbar-menu-content ul li a:hover {
-//   background-color: var(--pink-light);
-// }
-
-// /* Hide hamburger on large screens */
-// @media screen and (min-width: 900px) {
-//   .app__navbar-menu {
-//     display: none;
-//   }
-// }
-
-// /* Responsive adjustments */
-// @media screen and (max-width: 1024px) {
-//   .app__navbar {
-//     padding: 1rem 2rem;
-//   }
-//   .app__navbar-right {
-//     gap: 1.5rem;
-//   }
-// }
-
-// @media screen and (max-width: 900px) {
-//   .app__navbar-links {
-//     display: none;
-//   }
-//   .app__navbar-right {
-//     gap: 1rem;
-//   }
-// }
-
-
-
-// cfffffffffffffffff
-
-/* Navbar.scss */
-:root {
-  --pink-dark: #C71585;
-  --pink-darker-hover: #a30b67;
-  --pink-light: #FFB6C1;
-  --gold-glossy: #FFD700;
-  --white-color: #FFFFFF;
-  --gray-color: #808080;
-  --font-base: 'Nunito', sans-serif;
-}
-
-/* Logo */
-.healogo {
-  width: 60px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(255, 182, 193, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  object-fit: contain;
-  cursor: pointer;
-}
-
-.healogo:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 12px rgba(255, 182, 193, 0.9);
-}
-
-/* Navbar container */
 .app__navbar {
   width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
-  background-color: var(--pink-dark);
-  font-family: var(--font-base);
-  box-shadow: 0 4px 12px rgba(199, 21, 133, 0.3);
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  // white-space: nowrap;
+  //   top: 0;
+  z-index: 2;
 }
-
-.app__navbar-logo a {
-  color: var(--white-color);
-  text-decoration: none;
+.app__navbar-logo {
   display: flex;
-  gap: 12px;
-  align-items: center;
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-transform: capitalize;
+  justify-content: flex-start;
+  align-self: center;
+
+  a{
+    color: var(--gray-color);
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    p{
+      font-size: 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+
+      @media screen and (min-width: 450px) {
+        font-size: 1.3rem;
+      }
+    }
+    &:hover{
+      color: var(--secondary-color);
+    }
+  }
+
+
 }
 
-/* Right section */
-.app__navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-/* Navbar links */
 .app__navbar-links {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 2rem;
-}
-
-.app__navbar-links li a {
-  color: var(--white-color);
-  text-decoration: none;
-  font-weight: 600;
-  text-transform: capitalize;
-  font-size: clamp(0.875rem, 1vw, 1rem);
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-.app__navbar-links li a:hover,
-.app__navbar-links li a:focus {
-  background-color: var(--pink-darker-hover);
-}
-
-/* Donate button */
-.app__navbar-donate {
-  padding: 0.6rem 1.5rem;
-  background: linear-gradient(135deg, var(--gold-glossy), #f6e27a);
-  color: var(--pink-dark);
-  font-weight: 700;
-  font-size: clamp(0.875rem, 1vw, 1rem);
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.app__navbar-donate:hover {
-  background: linear-gradient(135deg, #f6e27a, var(--gold-glossy));
-  color: var(--white-color);
-  transform: scale(1.05);
-}
-
-/* Mobile menu icon */
-.app__navbar-menu {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--pink-light);
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  z-index: 1100;
-}
 
-.app__navbar-menu svg {
-  width: 70%;
-  height: 70%;
-  color: var(--white-color);
-}
-
-/* Mobile menu overlay */
-.app__navbar-menu-overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0,0,0,0.3);
-  z-index: 1040;
-  display: flex;
-  justify-content: flex-end;
-}
-
-/* Slide menu content */
-.app__navbar-menu-content {
-  background: linear-gradient(135deg, var(--white-color) 0%, var(--pink-light) 100%);
-  width: 80%;
-  max-width: 320px;
-  height: 100vh;
-  padding: 2rem 1.5rem 1.5rem 2rem;
-  box-shadow: -4px 0 20px rgba(199,21,133,0.7);
-  border-radius: 12px 0 0 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  overflow-y: auto;
-  z-index: 1050;
-  transition: background 0.3s ease;
-}
-
-.app__navbar-menu-content ul {
-  width: 100%;
-  margin: 2rem 0 0 0;
-  padding: 0;
   list-style: none;
+
+  li {
+    margin: 0 1rem;
+    flex-direction: column;
+    cursor: pointer;
+
+    div {
+      width: 5px;
+      height: 5px;
+      background: transparent;
+      border-radius: 50%;
+
+      margin-bottom: 5px;
+    }
+    a {
+      color: var(--gray-color);
+      text-decoration: none;
+      flex-direction: column;
+
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: larger;
+
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--secondary-color);
+      }
+    }
+    &:hover {
+      div {
+        background: var(--secondary-color);
+      }
+    }
+  }
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.app__navbar-menu {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+  justify-content: center;
+  align-items: center;
 
-.app__navbar-menu-content ul li a {
-  color: var(--pink-dark);
-  text-decoration: none;
-  font-size: 1.125rem;
-  text-transform: capitalize;
-  font-weight: 600;
-  padding: 0.75rem 1rem;
-  display: block;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
+  background: var(--secondary-color);
 
-/* Hover + click effect on slide menu */
-.app__navbar-menu-content ul li a:hover,
-.app__navbar-menu-content ul li a:focus {
-  background-color: var(--pink-dark);
-  color: var(--white-color);
-  transform: scale(1.05);
-}
+  svg {
+    width: 70%;
+    height: 70%;
+    color: var(--white-color);
+  }
 
-/* Hide hamburger on large screens */
-@media screen and (min-width: 900px) {
-  .app__navbar-menu {
+  div {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    padding: 1rem;
+
+    width: 80%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+
+    background: url("../../assets/bgWhite.png");
+    background-color: var(--white-color);
+    background-size: cover;
+    background-repeat: repeat;
+
+    box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
+
+    svg {
+      width: 35px;
+      height: 35px;
+      color: var(--secondary-color);
+      margin: 0.5rem 1rem;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+
+      li {
+        margin: 1rem;
+        cursor: pointer;
+
+        a {
+          color: var(--gray-color);
+          text-decoration: none;
+          font-size: 1rem;
+          text-transform: uppercase;
+          font-weight: 500;
+
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            color: var(--secondary-color);
+          }
+        }
+      }
+    }
+    @media screen and (min-width: 900px) {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 900px) {
     display: none;
-  }
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 1024px) {
-  .app__navbar {
-    padding: 1rem 2rem;
-  }
-  .app__navbar-right {
-    gap: 1.5rem;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .app__navbar-links {
-    display: none;
-  }
-  .app__navbar-right {
-    gap: 1rem;
   }
 }
