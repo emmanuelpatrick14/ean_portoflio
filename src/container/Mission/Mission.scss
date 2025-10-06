@@ -1,0 +1,254 @@
+
+
+// /* Updated SCSS */
+// .category-tabs {
+//   text-align: center;
+//   margin: 2rem 0;
+
+//   button {
+//     margin: 0 1rem;
+//     padding: 0.7rem 1.5rem;
+//     border: none;
+//     background: #f0f0f0;
+//     cursor: pointer;
+//     font-weight: 600;
+//     border-radius: 8px;
+//     transition: background 0.3s, color 0.3s;
+
+//     &.active {
+//       background: #313bac;
+//       color: white;
+//     }
+//   }
+// }
+
+// .app__profiles {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+//   gap: 2rem;
+//   padding: 2rem;
+// }
+
+// .app__profile-item {
+//   background: #fff;
+//   padding: 1.5rem;
+//   border-radius: 16px;
+//   transition: box-shadow 0.3s, transform 0.3s;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   text-align: center;
+//   cursor: pointer;
+//   border: 1px solid #eee;
+
+//   img {
+//     width: 100%;
+//     height: auto;
+//     max-height: 200px;
+//     object-fit: cover;
+//     border-radius: 12px;
+//     margin-bottom: 1rem;
+//   }
+
+//   .bold-text {
+//     font-size: 1.2rem;
+//     margin-bottom: 0.5rem;
+//   }
+
+//   .app__project-description {
+//     font-size: 0.95rem;
+//     color: #444;
+//     margin-bottom: 0.8rem;
+//   }
+
+//   .app__project-date {
+//     font-size: 0.85rem;
+//     color: #888;
+//     margin-bottom: 1rem;
+//   }
+
+//   .card-buttons {
+//     display: flex;
+//     gap: 1rem;
+
+//     .cta-btn {
+//       background-color: #313bac;
+//       color: white;
+//       padding: 0.5rem 1rem;
+//       border-radius: 8px;
+//       text-decoration: none;
+//       font-weight: 500;
+//       transition: background-color 0.3s;
+
+//       &:hover {
+//         background-color: #4b4fc0;
+//       }
+//     }
+//   }
+// }
+
+// .enhanced-card {
+//   transition: transform 0.3s, box-shadow 0.3s;
+//   will-change: transform;
+//   cursor: pointer;
+// }
+
+
+
+// .read-more-link {
+//   color: #313bac;
+//   font-size: 0.85rem;
+//   cursor: pointer;
+//   font-weight: 500;
+//   margin-left: 5px;
+
+//   &:hover {
+//     text-decoration: underline;
+//   }
+// }  
+
+
+// .read-more-btn {
+//   background: transparent;
+//   color: #313bac;
+//   font-size: 0.85rem;
+//   font-weight: 500;
+//   border: none;
+//   cursor: pointer;
+//   padding: 0.25rem 0.5rem;
+//   transition: color 0.3s ease, background 0.3s ease;
+//   border-radius: 6px;
+//   margin-top: 0.3rem;
+
+//   &:hover {
+//     background-color: rgba(49, 59, 172, 0.05);
+//     color: #4b4fc0;
+//     text-decoration: underline;
+//   }
+
+//   &:focus {
+//     outline: none;
+//     box-shadow: 0 0 0 2px rgba(49, 59, 172, 0.3);
+//   }
+// }
+
+
+
+
+// :root {
+//   --pink-dark: #C71585;
+//   --pink-light: #FFB6C1;
+//   --pink-soft: #EFA8C0;
+//   --white-color: #FFFFFF;
+//   --gray-color: #6B6B6B;
+//   --font-base: 'Poppins', sans-serif;
+// }
+
+// .head-text {
+//   font-family: var(--font-base);
+//   font-size: 2.5rem;
+//   font-weight: 700;
+//   margin-bottom: 2rem;
+//   // padding-top: 100px;
+//   color: var(--pink-dark);
+// }
+
+// .foundation__cards {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   gap: 2rem;
+//   padding: 2rem;
+// }
+
+// .foundation__card {
+//   background: linear-gradient(135deg, #ffe4ec, #fffafc);
+//   border-left: 4px solid var(--pink-light);
+//   border-radius: 12px;
+//   box-shadow: 0 6px 20px rgba(199, 21, 133, 0.1);
+//   padding: 2rem;
+//   max-width: 400px;
+//   flex: 1;
+//   transition: box-shadow 0.3s ease;
+// }
+
+// .foundation__card-title {
+//   font-size: 1.5rem;
+//   font-weight: 700;
+//   color: var(--pink-dark);
+//   margin-bottom: 1rem;
+// }
+
+// .foundation__card-description {
+//   font-size: 1rem;
+//   color: var(--gray-color);
+//   line-height: 1.6;
+// }
+
+
+
+:root {
+  --pink-dark: #C71585;
+  --pink-light: #FFB6C1;
+  --pink-soft: #EFA8C0;
+  --white-color: #FFFFFF;
+  --gray-color: #6B6B6B;
+  --font-base: 'Poppins', sans-serif;
+}
+
+.head-text {
+  font-family: var(--font-base);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  // color: #dcbec8;
+  color: var(--pink-dark);
+}
+
+/* Grid Layout */
+.foundation__cards {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+}
+
+/* Default: single column */
+.foundation__cards {
+  grid-template-columns: 1fr;
+}
+
+/* On medium+ screens: 2 cards side by side */
+@media (min-width: 900px) {
+  .foundation__cards {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+  }
+
+  /* Make "Our Drive" span full width below */
+  .foundation__card:nth-child(3) {
+    grid-column: span 2;
+  }
+}
+
+.foundation__card {
+  background: linear-gradient(135deg, #ffe4ec, #fffafc);
+  border-left: 4px solid var(--pink-light);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(199, 21, 133, 0.1);
+  padding: 2rem;
+  transition: box-shadow 0.3s ease;
+  max-width: 100%;
+}
+
+.foundation__card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--pink-dark);
+  margin-bottom: 1rem;
+}
+
+.foundation__card-description {
+  font-size: 1rem;
+  color: var(--gray-color);
+  line-height: 1.6;
+}

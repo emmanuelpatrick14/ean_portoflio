@@ -1,0 +1,577 @@
+// Define Sass variables to match your CSS root vars (for Sass functions like darken)
+$pink-dark: #c71585;
+$pink-light: #ffb6c1;
+$white-color: #ffffff;
+$gray-color: #6b6b6b;
+$font-base: "Poppins", sans-serif;
+
+:root {
+  --pink-dark: #{$pink-dark};
+  --pink-light: #{$pink-light};
+  --white-color: #{$white-color};
+  --gray-color: #{$gray-color};
+  --font-base: #{$font-base};
+}
+
+.partners-page {
+  position: relative;
+  padding: 6rem 2rem 5rem;
+  font-family: var(--font-base);
+  background: radial-gradient(circle at top, #fffafc, #ffe4ec 80%);
+  overflow: hidden;
+  text-align: center;
+
+  .background-art {
+    position: absolute;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/floral.png");
+    opacity: 0.1;
+    z-index: -1;
+  }
+
+  .partners-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--pink-dark);
+    margin-bottom: 2rem;
+
+    .highlight {
+      color: var(--pink-light);
+      border-bottom: 3px solid var(--pink-light);
+      padding-bottom: 4px;
+    }
+  }
+
+  .partners-text {
+    font-size: 1.1rem;
+    color: #333333;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    text-align: justify;
+    font-weight: 500;
+  }
+
+  .partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+    .partner-card {
+      background: var(--white-color);
+      padding: 1.5rem;
+      width: 260px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(199, 21, 133, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(199, 21, 133, 0.2);
+      }
+
+      img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        color: var(--pink-dark);
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: var(--gray-color);
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .become-partner-section {
+    margin-top: 40px; /* Space below grid */
+    padding: 2rem;
+    background-color: rgba(255, 182, 193, 0.05); /* Light pink tint to blend with gradient */
+    border-radius: 16px; /* Match card rounding */
+    box-shadow: 0 8px 20px rgba(199, 21, 133, 0.1); /* Same shadow as cards */
+    text-align: left; /* For form readability */
+
+    .partners-title {
+      text-align: center; /* Center the title */
+    }
+
+    .partners-text {
+      text-align: center; /* Center the intro text */
+    }
+
+    .partner-form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: 0 auto;
+      font-family: var(--font-base);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--pink-dark); /* Pink for labels */
+      font-size: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(199, 21, 133, 0.2); /* Subtle pink border */
+      border-radius: 8px; /* Softer rounding */
+      font-size: 1rem;
+      background: var(--white-color);
+      color: #333;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      font-family: var(--font-base);
+
+      &:focus {
+        border-color: var(--pink-light); /* Highlight on focus */
+        box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.3); /* Glow effect */
+        outline: none;
+      }
+    }
+
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      background-color: var(--pink-dark); /* Match theme */
+      color: var(--white-color);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      align-self: center; /* Center button */
+
+      &:hover {
+        background-color: darken($pink-dark, 10%); /* Now uses Sass var—fixed! */
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(199, 21, 133, 0.2); /* Lift like cards */
+      }
+    }
+
+    .privacy-note {
+      font-size: 0.9rem;
+      color: var(--gray-color);
+      margin-top: 1rem;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 4rem 1rem;
+
+    .partners-title {
+      font-size: 2.2rem;
+    }
+
+    .partners-text {
+      font-size: 1rem;
+    }
+
+    .partners-grid {
+      flex-direction: column;
+      align-items: center;
+
+      .partner-card {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+
+    .become-partner-section {
+      padding: 1.5rem;
+    }
+
+    .partner-form {
+      max-width: 100%;
+    }
+  }
+}// ... Your existing SCSS remains the same ...
+
+.become-partner-section {
+  // ... Existing styles ...
+
+  .partner-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;  /* Smaller width */
+    margin: 0 auto;
+    font-family: var(--font-base);
+  }
+
+  .form-group {
+    margin-bottom: 1.2rem;  /* Slightly tighter spacing */
+  }
+
+  .form-group label {
+    // ... Existing ...
+    font-size: 0.95rem;  /* Slightly smaller */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    // ... Existing ...
+    padding: 0.6rem 0.9rem;  /* Smaller padding */
+    font-size: 0.95rem;  /* Smaller text */
+  }
+
+  .form-group textarea {
+    height: 100px;  /* Slightly shorter */
+  }
+
+  .submit-button {
+    // ... Existing ...
+    padding: 0.6rem 1.2rem;  /* Smaller button */
+    font-size: 1rem;
+  }
+
+  .success-message {
+    color: #28a745;  /* Green for success */
+    font-size: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    background: rgba(40, 167, 69, 0.1);  /* Light green bg */
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+
+  .error-message {
+    color: #dc3545;  /* Red for error */
+    font-size: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    background: rgba(220, 53, 69, 0.1);  /* Light red bg */
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+
+  .form-conclusion {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(255, 240, 245, 0.8);  /* Whitish-pink, soft and aesthetic */
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    font-style: italic;
+    box-shadow: 0 2px 5px rgba(199, 21, 133, 0.05);  /* Subtle shadow for depth */
+  }
+}// ... (existing SCSS remains the same)
+
+.contact-us-section {
+  margin-top: 40px;
+  padding: 2rem;
+  background-color: rgba(255, 182, 193, 0.05);  // Light pink tint
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(199, 21, 133, 0.1);
+  text-align: left;
+
+  .partners-title {
+    text-align: center;
+  }
+
+  .partners-text {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .form-group {
+      margin-bottom: 1.5rem;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: var(--pink-dark);
+        font-size: 1rem;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid rgba(199, 21, 133, 0.2);
+        border-radius: 8px;
+        font-size: 1rem;
+        background: var(--white-color);
+        color: #333;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: var(--pink-light);
+          box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.3);
+        }
+      }
+
+      textarea {
+        height: 120px;
+        resize: vertical;
+      }
+    }
+
+    .submit-button {
+      background-color: var(--pink-dark);
+      color: var(--white-color);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      align-self: center;
+
+      &:hover {
+        background-color: darken($pink-dark, 10%);
+        transform: translateY(-3px);
+      }
+    }
+
+    .privacy-note {
+      font-size: 0.9rem;
+      color: var(--gray-color);
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+}
+
+
+
+// =====
+.partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 2rem auto 4rem;
+
+  .partner-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    img {
+      width: 140px;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.8;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+
+    span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #444;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+
+      img {
+        filter: grayscale(0);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-logos {
+    gap: 1.5rem;
+
+    .partner-logo img {
+      width: 100px;
+    }
+
+    .partner-logo span {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// ======
+
+// ... Your media query remains the same ...
+// ==========
+
+
+// /* Partners Page Styles */
+// .partners-page {
+//   padding: 4rem 2rem;
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   position: relative;
+//   overflow: hidden;
+// }
+
+// .partners-title {
+//   font-size: 2.5rem;
+//   margin-bottom: 1.5rem;
+//   text-align: center;
+//   color: #2c3e50;
+// }
+
+// .highlight {
+//   color: #e74c3c; /* Or your brand color */
+//   font-weight: bold;
+// }
+
+// .partners-text {
+//   font-size: 1.1rem;
+//   line-height: 1.6;
+//   color: #555;
+//   text-align: center;
+//   max-width: 800px;
+//   margin: 0 auto 3rem;
+// }
+
+// .partners-grid {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+//   gap: 2rem;
+//   margin-bottom: 4rem;
+// }
+
+// .partner-card {
+//   background: white;
+//   padding: 2rem;
+//   border-radius: 12px;
+//   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+//   transition: transform 0.3s ease, box-shadow 0.3s ease;
+//   text-align: center;
+// }
+
+// .partner-card:hover {
+//   transform: translateY(-5px);
+//   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+// }
+
+// .partner-card h3 {
+//   margin: 1.5rem 0 1rem;
+//   color: #2c3e50;
+//   font-size: 1.4rem;
+// }
+
+// .partner-card p {
+//   color: #666;
+//   line-height: 1.5;
+// }
+
+// /* Become a Partner Section */
+// .become-partner-section {
+//   background-color: #f9f9f9;
+//   padding: 3rem;
+//   border-radius: 12px;
+//   margin-top: 3rem;
+// }
+
+// .partner-form {
+//   max-width: 800px;
+//   margin: 2rem auto 0;
+// }
+
+// .form-group {
+//   margin-bottom: 1.5rem;
+// }
+
+// .form-group label {
+//   display: block;
+//   margin-bottom: 0.5rem;
+//   font-weight: 600;
+//   color: #2c3e50;
+// }
+
+// .form-group input,
+// .form-group select,
+// .form-group textarea {
+//   width: 100%;
+//   padding: 0.8rem;
+//   border: 1px solid #ddd;
+//   border-radius: 6px;
+//   font-size: 1rem;
+//   transition: border-color 0.3s;
+// }
+
+// .form-group input:focus,
+// .form-group select:focus,
+// .form-group textarea:focus {
+//   border-color: #e74c3c; /* Your brand color */
+//   outline: none;
+//   box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+// }
+
+// .form-group textarea {
+//   resize: vertical;
+//   min-height: 120px;
+// }
+
+// .form-row {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   gap: 1.5rem;
+// }
+
+// .submit-btn {
+//   background-color: #e74c3c; /* Your brand color */
+//   color: white;
+//   border: none;
+//   padding: 1rem 2rem;
+//   font-size: 1.1rem;
+//   font-weight: 600;
+//   border-radius: 6px;
+//   cursor: pointer;
+//   transition: background-color 0.3s;
+//   display: block;
+//   margin: 2rem auto 0;
+// }
+
+// .submit-btn:hover {
+//   background-color: #c0392b;
+// }
+
+// /* Responsive adjustments */
+// @media (max-width: 768px) {
+//   .form-row {
+//     grid-template-columns: 1fr;
+//   }
+
+//   .partners-title {
+//     font-size: 2rem;
+//   }
+
+//   .become-partner-section {
+//     padding: 2rem 1.5rem;
+//   }
+// }
